@@ -3,18 +3,18 @@ import routes from './routes/routes';
 
 
 
-const app = express()
+const App = express()
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+App.use(express.json());
 
-app.get('/', async (req: Request, res: Response) => {
+App.get('/', async (req: Request, res: Response) => {
   res.send('Hi from express');
 })
 
-app.use('/', routes);
+App.use('/', routes);
 
-app.listen(PORT, () => {
+App.listen(PORT, () => {
   console.log(`Express API is running on port: ${PORT}`);
 })
 
